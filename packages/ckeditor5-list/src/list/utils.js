@@ -37,7 +37,8 @@ export function generateLiInUl( modelItem, conversionApi ) {
 	const mapper = conversionApi.mapper;
 	const viewWriter = conversionApi.writer;
 	const listType = modelItem.getAttribute( 'listType' ) == 'numbered' ? 'ol' : 'ul';
-	const viewItem = createViewListItemElement( viewWriter );
+  const viewItemOptions = modelItem.hasAttribute("pageFlow") ? { class: "deep" } : {};
+	const viewItem = createViewListItemElement( viewWriter, viewItemOptions );
 
 	const viewList = viewWriter.createContainerElement( listType, null );
 
