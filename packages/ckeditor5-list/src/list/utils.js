@@ -16,8 +16,8 @@ import { ButtonView } from 'ckeditor5/src/ui';
  * @param {module:engine/view/downcastwriter~DowncastWriter} writer The writer instance.
  * @returns {module:engine/view/containerelement~ContainerElement}
  */
-export function createViewListItemElement( writer ) {
-	const viewItem = writer.createContainerElement( 'li' );
+export function createViewListItemElement( writer, options ) {
+	const viewItem = writer.createContainerElement( 'li', options );
 
 	viewItem.getFillerOffset = getListItemFillerOffset;
 
