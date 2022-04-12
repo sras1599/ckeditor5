@@ -41,7 +41,6 @@ import TableProperties from '@ckeditor/ckeditor5-table/src/tableproperties';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
 
-
 export default class InlineEditor extends InlineEditorBase {}
 
 // Plugins to include in the build.
@@ -220,4 +219,41 @@ InlineEditor.defaultConfig = {
   },
   // This value must be kept in sync with the language defined in webpack.config.js.
   language: 'en',
+};
+
+InlineEditor.coverPageConfig = {
+  fontFamily: InlineEditor.defaultConfig.fontFamily,
+  fontSize: InlineEditor.defaultConfig.fontSize,
+  ui: InlineEditor.defaultConfig.ui,
+  language: InlineEditor.defaultConfig.language,
+  toolbar: {
+    items: [
+      'bold',
+      '|',
+      'heading',
+      '|',
+      'alignment',
+      '|',
+      'fontBackgroundColor',
+      'fontColor',
+      'fontSize',
+      'fontFamily',
+      'highlight',
+      'underline',
+    ],
+  },
+  plugins: [
+    Alignment,
+    Essentials,
+    Autoformat,
+    Bold,
+    FontBackgroundColor,
+    FontColor,
+    FontFamily,
+    FontSize,
+    Heading,
+    Highlight,
+    Paragraph,
+    Underline,
+  ],
 };
