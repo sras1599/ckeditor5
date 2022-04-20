@@ -57,6 +57,20 @@ export default class ImageEditing extends Plugin {
 			.attributeToAttribute( {
 				view: {
 					name: 'img',
+					key: 'height'
+				},
+				model: 'height'
+			} )
+			.attributeToAttribute( {
+				view: {
+					name: 'img',
+					key: 'width'
+				},
+				model: 'width'
+			} )
+			.attributeToAttribute( {
+				view: {
+					name: 'img',
 					key: 'srcset'
 				},
 				model: {
