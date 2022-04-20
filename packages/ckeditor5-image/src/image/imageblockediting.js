@@ -65,7 +65,7 @@ export default class ImageBlockEditing extends Plugin {
 			isObject: true,
 			isBlock: true,
 			allowWhere: '$block',
-			allowAttributes: [ 'alt', 'src', 'srcset' ]
+			allowAttributes: [ 'alt', 'src', 'srcset', 'height', 'width' ]
 		} );
 
 		this._setupConversion();
