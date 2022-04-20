@@ -106,6 +106,8 @@ export default class ImageBlockEditing extends Plugin {
 		conversion.for( 'downcast' )
 			.add( downcastImageAttribute( imageUtils, 'imageBlock', 'src' ) )
 			.add( downcastImageAttribute( imageUtils, 'imageBlock', 'alt' ) )
+			.add( downcastImageAttribute( imageUtils, 'imageBlock', 'height' ) )
+			.add( downcastImageAttribute( imageUtils, 'imageBlock', 'width' ) )
 			.add( downcastSrcsetAttribute( imageUtils, 'imageBlock' ) );
 
 		// More image related upcasts are in 'ImageEditing' plugin.
