@@ -114,7 +114,7 @@ export default class ImageResizeEditing extends Plugin {
 				const figure = conversionApi.mapper.toViewElement( data.item );
 
 				if ( data.attributeNewValue !== null ) {
-					viewWriter.setStyle( 'width', data.attributeNewValue, figure );
+					viewWriter.setStyle( 'width', data.attributeNewValue.endsWith("%") ? data.attributeNewValue : `${data.attributeNewValue}px`, figure );
 					viewWriter.addClass( 'image_resized', figure );
 				} else {
 					viewWriter.removeStyle( 'width', figure );
