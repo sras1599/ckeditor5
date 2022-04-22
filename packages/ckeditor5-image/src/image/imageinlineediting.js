@@ -115,8 +115,6 @@ export default class ImageInlineEditing extends Plugin {
 		conversion.for( 'downcast' )
 			.add( downcastImageAttribute( imageUtils, 'imageInline', 'src' ) )
 			.add( downcastImageAttribute( imageUtils, 'imageInline', 'alt' ) )
-			.add( downcastImageAttribute( imageUtils, 'imageInline', 'height' ) )
-			.add( downcastImageAttribute( imageUtils, 'imageInline', 'width' ) )
 			.add( downcastSrcsetAttribute( imageUtils, 'imageInline' ) );
 
 		// More image related upcasts are in 'ImageEditing' plugin.
