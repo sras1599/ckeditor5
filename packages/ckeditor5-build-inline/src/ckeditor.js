@@ -8,6 +8,7 @@ import InlineEditorBase from '@ckeditor/ckeditor5-editor-inline/src/inlineeditor
 
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
 import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat';
+import AutoSave from '@ckeditor/ckeditor5-autosave/src/autosave';
 import Base64UploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/base64uploadadapter';
 import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote';
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
@@ -33,6 +34,7 @@ import Indent from '@ckeditor/ckeditor5-indent/src/indent';
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
 import Link from '@ckeditor/ckeditor5-link/src/link';
 import List from '@ckeditor/ckeditor5-list/src/list';
+import ListProperties from '@ckeditor/ckeditor5-list/src/listproperties';
 import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed';
 import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice';
@@ -44,12 +46,17 @@ import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformatio
 import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
 import UploadAdapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter';
 
+// config
+import FontColorConfig from '../config/fontColor';
+import FontFamilyConfig from '../config/fontFamily';
+
 export default class InlineEditor extends InlineEditorBase {}
 
 // Plugins to include in the build.
 InlineEditor.builtinPlugins = [
 	Alignment,
 	Autoformat,
+	AutoSave,
 	Base64UploadAdapter,
 	BlockQuote,
 	Bold,
@@ -75,6 +82,7 @@ InlineEditor.builtinPlugins = [
 	Italic,
 	Link,
 	List,
+	ListProperties,
 	MediaEmbed,
 	Paragraph,
 	PasteFromOffice,
@@ -89,65 +97,9 @@ InlineEditor.builtinPlugins = [
 
 // Editor configuration.
 InlineEditor.defaultConfig = {
-	fontFamily: {
-		options: [
-			'Helvetica',
-			'Arial',
-			'Courier-New',
-			'Georgia',
-			'Lucinda-Sans-Unicode',
-			'Tahoma',
-			'Times-New-Roman',
-			'Verdana',
-			'Tangerine',
-			'Langar',
-			'AlloyInk',
-			'ProPixie',
-			'Excluded',
-			'Excluded-Italic',
-			'Antara',
-			'AttackGraffiti',
-			'Neoneon',
-			'Azonix',
-			'Spongeboy',
-			'OldeEnglish',
-			'Rondal',
-			'AssassinNinja',
-			'Mandalorian',
-			'Sundiary',
-			'AntiCorona',
-			'Facon',
-			'WaltDisney',
-			'Hacked',
-			'Raleway',
-			'Edition',
-			'GreatVibes',
-			'Chomsky',
-			'Adistro',
-			'RobotoSlab',
-			'Fontania',
-			'AmneSans',
-			'Trench',
-			'Goudy',
-			'Desyrel',
-			'QarmicSans',
-			'CabinSketch',
-			'StarJedi',
-			'Amali',
-			'Hangyaku',
-			'GoldenRanger',
-			'PrintClearly',
-			'Oswald',
-			'Oswald-Stencil',
-			'Oswald-Bold',
-			'Sofia',
-			'Enigma',
-			'Pecita',
-			'Capsuula',
-			'spinCycle',
-			'spinCycle3D',
-		],
-	},
+	fontColor: FontColorConfig,
+	fontBackgroundColor: FontColorConfig,
+	fontFamily: FontFamilyConfig,
 	fontSize: {
 		options: [
 			'8',
@@ -155,16 +107,33 @@ InlineEditor.defaultConfig = {
 			'10',
 			'11',
 			'12',
+			'13',
 			'14',
+			'15',
 			'16',
+			'17',
 			'18',
+			'19',
 			'20',
+			'21',
 			'22',
+			'23',
 			'24',
+			'25',
 			'26',
+			'27',
 			'28',
+			'29',
+			'30',
+			'32',
+			'34',
 			'36',
+			'38',
+			'40',
+			'44',
 			'48',
+			'52',
+			'56',
 			'60',
 		],
 		supportAllValues: true,
@@ -217,12 +186,18 @@ InlineEditor.defaultConfig = {
 	toolbar: {
 		items: [
 			'bold',
+			'italic',
+			'underline',
+			'|',
+			'fontFamily',
+			'fontSize',
+			'fontColor',
+			'fontBackgroundColor',
 			'|',
 			'heading',
 			'|',
 			'alignment',
 			'|',
-			'italic',
 			'blockQuote',
 			'imageUpload',
 			'indent',
@@ -231,13 +206,8 @@ InlineEditor.defaultConfig = {
 			'numberedList',
 			'bulletedList',
 			'insertTable',
-			'fontBackgroundColor',
-			'fontColor',
-			'fontSize',
-			'fontFamily',
 			'highlight',
 			'horizontalLine',
-			'underline',
 		],
 	},
 	ui: {
@@ -256,6 +226,7 @@ InlineEditor.coverPageConfig = {
 	plugins: [
 		Alignment,
 		Autoformat,
+		AutoSave,
 		Bold,
 		Essentials,
 		FontBackgroundColor,
@@ -264,23 +235,26 @@ InlineEditor.coverPageConfig = {
 		FontSize,
 		Heading,
 		Highlight,
+		Italic,
 		Paragraph,
 		Underline,
 	],
 	toolbar: {
 		items: [
 			'bold',
+			'italic',
+			'underline',
+			'|',
+			'fontFamily',
+			'fontSize',
+			'fontColor',
+			'fontBackgroundColor',
 			'|',
 			'heading',
 			'|',
 			'alignment',
 			'|',
-			'fontBackgroundColor',
-			'fontColor',
-			'fontSize',
-			'fontFamily',
 			'highlight',
-			'underline',
 		],
 	},
 	ui: InlineEditor.defaultConfig.ui,

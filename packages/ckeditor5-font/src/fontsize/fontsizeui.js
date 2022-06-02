@@ -48,8 +48,8 @@ export default class FontSizeUI extends Plugin {
 
 			// Create dropdown model.
 			dropdownView.buttonView.set( {
-				label: t( 'Font Size' ),
-				icon: fontSizeIcon,
+				icon: false,
+				withText: true,
 				tooltip: true
 			} );
 
@@ -62,6 +62,9 @@ export default class FontSizeUI extends Plugin {
 			} );
 
 			dropdownView.bind( 'isEnabled' ).to( command );
+			dropdownView.buttonView.bind( 'label' ).to( command, 'value', value => {
+				return value || t( '16px' );
+			} );
 
 			// Execute command when an item from the dropdown is selected.
 			this.listenTo( dropdownView, 'execute', evt => {

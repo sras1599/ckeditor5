@@ -139,7 +139,7 @@ export function downcastAttributeToStyle( conversion, { modelElement, modelAttri
 		view: modelAttributeValue => ( {
 			key: 'style',
 			value: {
-				[ styleName ]: modelAttributeValue
+				[ styleName ]: !modelAttributeValue ? modelAttributeValue : modelAttributeValue.includes("!important") ? modelAttributeValue : `${modelAttributeValue} !important`
 			}
 		} )
 	} );
@@ -165,7 +165,7 @@ export function downcastTableAttribute( conversion, { modelAttribute, styleName 
 		const table = [ ...mapper.toViewElement( item ).getChildren() ].find( child => child.is( 'element', 'table' ) );
 
 		if ( attributeNewValue ) {
-			writer.setStyle( styleName, attributeNewValue, table );
+			writer.setStyle( styleName, !attributeNewValue ? attributeNewValue : attributeNewValue.includes("!important") ? attributeNewValue : `${attributeNewValue} !important`, table );
 		} else {
 			writer.removeStyle( styleName, table );
 		}

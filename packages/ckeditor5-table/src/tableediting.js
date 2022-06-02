@@ -66,7 +66,7 @@ export default class TableEditing extends Plugin {
 
 		schema.register( 'table', {
 			allowWhere: '$block',
-			allowAttributes: [ 'headingRows', 'headingColumns' ],
+			allowAttributes: [ 'headingRows', 'headingColumns', 'id' ],
 			isObject: true,
 			isBlock: true
 		} );

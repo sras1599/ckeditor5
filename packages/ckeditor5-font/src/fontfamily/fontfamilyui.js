@@ -46,9 +46,9 @@ export default class FontFamilyUI extends Plugin {
 			addListToDropdown( dropdownView, _prepareListOptions( options, command ) );
 
 			dropdownView.buttonView.set( {
-				label: t( 'Font Family' ),
-				icon: fontFamilyIcon,
-				tooltip: true
+				icon: false,
+				tooltip: true,
+				withText: true,
 			} );
 
 			dropdownView.extendTemplate( {
@@ -58,6 +58,9 @@ export default class FontFamilyUI extends Plugin {
 			} );
 
 			dropdownView.bind( 'isEnabled' ).to( command );
+			dropdownView.buttonView.bind( 'label' ).to( command, 'value', value => {
+				return value ? value : t( 'Helvetica' );
+			} );
 
 			// Execute command when an item from the dropdown is selected.
 			this.listenTo( dropdownView, 'execute', evt => {

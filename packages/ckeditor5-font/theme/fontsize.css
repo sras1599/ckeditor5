@@ -24,3 +24,11 @@ See https://github.com/ckeditor/ckeditor5/issues/6636 */
 		font-size: 1.8em;
 	}
 }
+
+.ck.ck-dropdown.ck-font-size-dropdown {
+	& .ck-button.ck-dropdown__button {
+		& .ck-button__label {
+			width: auto;
+		}
+	}
+}

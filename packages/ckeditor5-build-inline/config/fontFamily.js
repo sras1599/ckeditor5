@@ -1,0 +1,43 @@
+const fonts = [
+	'Helvetica',
+	'ArbutusSlab-Regular',
+	'Arial',
+	'B612-Regular',
+	'Courier-New',
+	'EBGaramond-Regular',
+	'Edition',
+	'Enigma',
+	'EnigmaBold',
+	'FiraSans-Regular',
+	'Georgia',
+	'Langar',
+	'Lato-Regular',
+	'Lucida',
+	'Lucinda-Sans-Unicode',
+	'Merriweather-Bold',
+	'Merriweather-Regular',
+	'Monda-Bold',
+	'Monda-Regular',
+	'Montserrat-Medium',
+	'OpenSans-Regular',
+	'Oswald',
+	'Oswald-Stencil',
+	'PTSerif-Regular',
+	'RadioCanada-Bold',
+	'RadioCanada-Regular',
+	'Raleway',
+	'RobotoCondensed-Regular',
+	'RobotoSlab',
+	'Sofia',
+	'Tahoma',
+	'Times-New-Roman',
+	'Ubuntu-Regular',
+	'Verdana',
+	'WorkSans-Regular',
+];
+
+const FontFamilyConfig = {
+	options: fonts,
+};
+
+export default FontFamilyConfig;
