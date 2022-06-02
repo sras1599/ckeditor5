@@ -65,7 +65,7 @@ export default class ImageInlineEditing extends Plugin {
 			isInline: true,
 			allowWhere: '$text',
 			allowAttributesOf: '$text',
-			allowAttributes: [ 'alt', 'src', 'srcset', 'height', 'width' ]
+			allowAttributes: [ 'alt', 'src', 'srcset' ]
 		} );
 
 		// Disallow inline images in captions (for now). This is the best spot to do that because
