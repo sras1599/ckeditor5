@@ -34,7 +34,7 @@ export default class Image extends Plugin {
 	 * @inheritDoc
 	 */
 	static get requires() {
-		return [ ImageBlock, ImageInline ];
+		return [ ImageBlock ];
 	}
 
 	/**
